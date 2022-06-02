@@ -1,4 +1,4 @@
-import 'providers/bloc_providers.dart';
+import 'bloc_providers.dart';
 import 'export_packages.dart';
 import 'routes/export_routes.dart';
 

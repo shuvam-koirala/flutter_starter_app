@@ -1,5 +1,5 @@
 import 'package:starter_project/routes/app_routes.dart';
-import 'package:starter_project/routes/navigaton_type.dart';
+import 'package:starter_project/routes/navigation_type.dart';
 
 import '../../export_packages.dart';
 
@@ -16,8 +16,8 @@ class OnBoardingScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text("Starter Pack"),
-              ElevatedButton(onPressed: ()=>NavigationType.pushReplacement(context, AppRoutes.loginScreen), child: const Text("Login")),
-              ElevatedButton(onPressed: ()=>NavigationType.pushReplacement(context, AppRoutes.signupScreen), child: const Text("Signup")),
+              ElevatedButton(onPressed: ()=>NavigationType.pushReplacement(context: context, route: AppRoutes.loginScreen), child: const Text("Login")),
+              ElevatedButton(onPressed: ()=>NavigationType.pushReplacement(context: context, route: AppRoutes.signupScreen), child: const Text("Signup")),
             ],
           ),
         ),

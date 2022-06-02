@@ -1,8 +1,7 @@
 import 'package:starter_project/export_packages.dart';
 import 'package:starter_project/routes/app_routes.dart';
-import 'package:starter_project/routes/navigaton_type.dart';
-
-import '../../status/form_submission_status.dart';
+import 'package:starter_project/routes/navigation_type.dart';
+import '../../../../services/status/form_submission_status.dart';
 import 'bloc/signup_bloc.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -20,6 +19,7 @@ class SignupScreen extends StatelessWidget {
           ],
         ),);
   }
+
   Widget _signUpForm() {
     return BlocListener<SignupBloc, SignupState>(
         listener: (context, state) {
@@ -101,6 +101,7 @@ class SignupScreen extends StatelessWidget {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   context.read<SignupBloc>().add(SignupPressed());
+                   NavigationType.push(context: context, route: AppRoutes.confirmScreen);
                 }
               },
               child: const Text('Sign Up'),
@@ -112,7 +113,7 @@ class SignupScreen extends StatelessWidget {
     return SafeArea(
       child: TextButton(
         child: const Text('Already have an account? Sign in.'),
-        onPressed: () => NavigationType.popAndPush(context, AppRoutes.loginScreen),
+        onPressed: () => NavigationType.popAndPush(context: context, route: AppRoutes.loginScreen),
       ),
     );
   }

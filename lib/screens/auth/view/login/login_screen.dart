@@ -1,8 +1,9 @@
 import 'package:starter_project/routes/app_routes.dart';
-import 'package:starter_project/routes/navigaton_type.dart';
+import 'package:starter_project/routes/navigation_type.dart';
 import '../../../../export_packages.dart';
 import '../../../../services/features/double_back_press_to_close_app.dart';
-import '../../status/form_submission_status.dart';
+import '../../../../services/status/form_submission_status.dart';
+
 import 'bloc/login_bloc.dart';
 
 
@@ -101,7 +102,7 @@ class LoginScreen extends StatelessWidget {
     return SafeArea(
       child: TextButton(
         child: const Text('Don\'t have an account? Sign up.'),
-        onPressed: () => NavigationType.push(context, AppRoutes.signupScreen),
+        onPressed: () => NavigationType.push(context: context, route: AppRoutes.signupScreen),
       ),
     );
   }

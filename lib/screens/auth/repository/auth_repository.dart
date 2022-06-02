@@ -11,6 +11,7 @@ class AuthRepository {
     }
     throw Exception('failed log in');
   }
+  
    Future<void> signup() async {
     if (kDebugMode) {
       print('attempting Signup');
@@ -20,5 +21,16 @@ class AuthRepository {
       print('registered');
     }
     throw Exception('failed to register');
+  }
+
+  Future<void> verify() async {
+    if (kDebugMode) {
+      print('attempting Verification');
+    }
+    await Future.delayed(const Duration(seconds: 5));
+    if (kDebugMode) {
+      print(' Verified');
+    }
+    throw Exception('failed to verify');
   }
 }

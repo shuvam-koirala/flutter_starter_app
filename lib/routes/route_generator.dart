@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:starter_project/routes/app_routes.dart';
+import 'package:starter_project/screens/auth/view/confirm/confirm_screen.dart';
 import 'package:starter_project/screens/auth/view/signup/signup_screen.dart';
 import 'package:starter_project/screens/initial/onboarding_screen.dart';
 import '../screens/auth/view/login/login_screen.dart';
@@ -18,6 +19,8 @@ class RouteGenerator {
             builder: (context) => const OnBoardingScreen());
       case AppRoutes.signupScreen:
         return MaterialPageRoute(builder: (context) =>  SignupScreen());
+      case AppRoutes.confirmScreen:
+        return MaterialPageRoute(builder: (context) =>  ConfirmScreen());  
       default:
         return _errorRoute();
     }
